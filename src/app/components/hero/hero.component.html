@@ -1,0 +1,70 @@
+<section id="inicio" class="hero-section">
+  <div class="hero-container">
+    
+    <!-- Bloque principal asimétrico -->
+    <div class="hero-main">
+      <div class="title-block">
+        <h1 class="hero-title">
+          <span class="title-line">ANDY YUPANQUI</span>
+          <span class="title-line highlight">{{ typedText }}<span class="cursor">_</span></span>
+        </h1>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="hero-description">
+        <p class="description-text">
+          <!-- Diseñando y construyendo <span class="highlight-word">infraestructuras cloud escalables</span> 
+          y aplicaciones web de alto rendimiento. Experto en transformar ideas complejas 
+          en <span class="highlight-word">soluciones elegantes</span>. -->
+          Diseño arquitecturas cloud resilientes enfocadas en escalabilidad, disponibilidad y optimización de costos, desarrollando aplicaciones de alto rendimiento que convierten necesidades complejas en soluciones técnicas eficientes.
+        </p>
+      </div>
+      
+      <div class="hero-actions">
+        <button class="btn-primary" (click)="downloadCV()">
+          <span class="btn-icon">↓</span>
+          DESCARGAR CV
+          <span class="btn-decoration"></span>
+        </button>
+        
+        <button class="btn-secondary" (click)="scrollToContact()">
+          INICIAR PROYECTO
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Panel lateral de redes sociales -->
+    <div class="social-panel">
+      <div class="panel-header">CONECTA</div>
+      <div class="social-links">
+        <a 
+          *ngFor="let link of socialLinks"
+          [href]="link.url"
+          target="_blank"
+          class="social-link">
+          <i [class]="link.icon"></i>
+          <span class="link-label">{{ link.label }}</span>
+        </a>
+      </div>
+      <div class="panel-decoration"></div>
+    </div>
+    
+    <!-- Estadísticas flotantes -->
+    <div class="stats-floating">
+      <div class="stat-item">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">AÑOS</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">PROYECTOS</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">CLOUD</div>
+      </div>
+    </div>
+    
+  </div>
+</section>

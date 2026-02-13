@@ -1,0 +1,27 @@
+<div class="background-container">
+  <!-- Grid de fondo -->
+  <div class="grid-layer"></div>
+  
+  <!-- Línea de escaneo CRT -->
+  <div class="scan-line"></div>
+  
+  <!-- Formas flotantes brutales -->
+  <div class="floating-shapes">
+    <div 
+      *ngFor="let shape of floatingShapes"
+      class="shape"
+      [class.square]="shape.shape === 'square'"
+      [class.triangle]="shape.shape === 'triangle'"
+      [style.width.px]="shape.size"
+      [style.height.px]="shape.size"
+      [style.left.%]="shape.left"
+      [style.top.%]="shape.top"
+      [style.animation-delay.s]="shape.delay"
+      [style.animation-duration.s]="shape.duration"
+      [style.transform]="'rotate(' + shape.rotate + 'deg)'">
+    </div>
+  </div>
+  
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+</div>

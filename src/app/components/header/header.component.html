@@ -1,0 +1,21 @@
+<header [class.scrolled]="isScrolled">
+  <div class="header-content">
+    <div class="logo">
+      <span class="bracket">&lt;</span>
+      <span class="logo-text">ANDY.DEV</span>
+      <span class="bracket">/&gt;</span>
+    </div>
+    
+    <nav class="main-nav">
+      <button 
+        *ngFor="let item of menuItems"
+        class="nav-item"
+        [class.active]="activeSection === item.id"
+        (click)="scrollToSection(item.id)">
+        <span class="nav-bracket">[</span>
+        {{ item.label }}
+        <span class="nav-bracket">]</span>
+      </button>
+    </nav>
+  </div>
+</header>

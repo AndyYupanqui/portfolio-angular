@@ -1,0 +1,84 @@
+<section id="perfil" class="about-section">
+  <div class="about-container">
+    
+    <!-- Header de sección con diseño diagonal -->
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-number">[01]</span>
+        PERFIL PROFESIONAL
+      </h2>
+      <div class="title-decoration"></div>
+    </div>
+    
+    <!-- Grid asimétrico -->
+    <div class="about-grid">
+      
+      <!-- Bloque de texto principal -->
+      <div class="text-block">
+        <div class="text-content">
+          <p class="intro-text">
+            <!-- <span class="highlight-line">Ingeniero de sistemas especializado</span>  -->
+            Ingeniero de sistemas especializado en diseñar y construir 
+            infraestructuras cloud escalables y resilientes. Mi enfoque combina arquitectura técnica 
+            sólida con experiencia de usuario excepcional.
+          </p>
+          
+          <p class="body-text">
+            Con más de 4 años transformando requisitos complejos en soluciones elegantes, 
+            trabajo con equipos multidisciplinarios para entregar productos que no solo funcionan, 
+            sino que escalan y se adaptan
+            <!-- <span class="text-highlight">escalan</span> y se <span class="text-highlight">adaptan</span>  -->
+            al crecimiento del negocio.
+          </p>
+          
+          <p class="body-text">
+            Mi stack abarca desde arquitecturas serverless en Cloud hasta aplicaciones frontend y backend
+            modernas. Creo firmemente en el código limpio, la automatización 
+            y las prácticas DevOps que permiten entregas rápidas y confiables.
+          </p>
+        </div>
+        
+        <!-- Métricas de impacto -->
+        <!-- <div class="metrics-row">
+          <div 
+            *ngFor="let metric of metrics"
+            class="metric-card"
+            [class]="'metric-' + metric.color">
+            <div class="metric-value">
+              {{ metric.value | number:'1.0-0' }}{{ metric.suffix }}
+            </div>
+            <div class="metric-label">{{ metric.label }}</div>
+          </div>
+        </div> -->
+      </div>
+      
+      <!-- Panel de expertise -->
+      <div class="expertise-panel">
+        <div class="panel-title">HABILIDADES</div>
+        
+        <div class="expertise-list">
+          <div 
+            *ngFor="let item of expertise; let i = index"
+            class="expertise-item"
+            [style.animation-delay]="i * 0.1 + 's'">
+            <div class="item-header">
+              <i class="fas" [class]="item.icon"></i>
+              <span class="item-name">{{ item.area }}</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" [style.width.%]="item.level">
+                <span class="skill-percentage">{{ item.level }}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel-footer">
+          <!-- <div class="footer-decoration"></div> -->
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>

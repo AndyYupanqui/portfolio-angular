@@ -1,0 +1,49 @@
+<section id="contacto" class="contact-section">
+  <div class="contact-container">
+    
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-number">[04]</span>
+        COLABOREMOS
+      </h2>
+      <p class="section-subtitle">¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a hacerlo realidad.</p>
+    </div>
+    
+    <div class="contact-grid">
+      
+      <div class="contact-cta">
+        <div class="cta-content">
+          <h3 class="cta-title">¿Listo para empezar?</h3>
+          <p class="cta-text">
+            Siempre estoy buscando nuevos desafíos y oportunidades para crear 
+            soluciones tecnológicas que marquen la diferencia.
+          </p>
+          <div class="cta-highlight">
+            <span class="highlight-text">Respuesta en 24 horas</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-methods">
+        <div 
+          *ngFor="let method of contactMethods"
+          class="contact-method">
+          <a [href]="method.link" [target]="method.link.startsWith('http') ? '_blank' : '_self'" class="method-link">
+            <div class="method-icon">
+              <i [class]="method.icon"></i>
+            </div>
+            <div class="method-info">
+              <div class="method-label">{{ method.label }}</div>
+              <div class="method-value">{{ method.value }}</div>
+            </div>
+            <div class="method-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<section id="stack" class="skills-section">
+  <div class="skills-container">
+    
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-number">[02]</span>
+        STACK TECNOLÓGICO
+      </h2>
+      <p class="cta-text">Herramientas y frameworks que domino para construir soluciones de clase mundial</p>
+    </div>
+    
+    <div class="skills-grid">
+      <div 
+        *ngFor="let category of skillCategories; let i = index"
+        class="category-block"
+        [class]="'block-' + category.color"
+        [style.animation-delay]="i * 0.1 + 's'">
+        
+        <div class="category-header">
+          <h3 class="category-title">{{ category.title }}</h3>
+          <div class="header-decoration"></div>
+        </div>
+        
+        <div class="skills-list">
+          <div 
+            *ngFor="let skill of category.skills"
+            class="skill-item"
+            [class]="getLevelClass(skill.level)">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">{{ skill.name }}</div>
+              <div class="skill-level">{{ skill.level }}</div>
+            </div>
+            <div class="skill-indicator">
+              <div class="indicator-dot"></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>

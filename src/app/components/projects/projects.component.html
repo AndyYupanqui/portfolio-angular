@@ -1,0 +1,52 @@
+<section id="trabajos" class="projects-section">
+  <div class="projects-container">
+    
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-number">[03]</span>
+        TRABAJOS DESTACADOS
+      </h2>
+      <p class="cta-text">Proyectos que combinan ingeniería de software robusta con impacto real en el negocio</p>
+    </div>
+    
+    <div class="projects-grid">
+      <div 
+        *ngFor="let project of projects; let i = index"
+        class="project-card"
+        [class.featured]="project.featured"
+        [style.animation-delay]="i * 0.1 + 's'"
+        (click)="openProject(project.link)">
+        
+        <div class="card-header">
+          <span class="project-number">{{ '#' + (project.id < 10 ? '0' + project.id : project.id) }}</span>
+          <span class="project-category">{{ project.category }}</span>
+        </div>
+        
+        <div class="card-icon">
+          <!-- <i [class]="project.image"></i> -->
+           <img src="/assets/projects/{{ project.image }}.png" alt="{{ project.title }} icon">
+        </div>
+        
+        <h3 class="project-title">{{ project.title }}</h3>
+        
+        <p class="project-description">{{ project.description }}</p>
+        
+        <div class="tech-stack">
+          <span *ngFor="let tech of project.tech" class="tech-tag">
+            {{ tech }}
+          </span>
+        </div>
+        
+        <div class="card-footer">
+          <a [href]="project.link" target="_blank" class="view-project" (click)="$event.stopPropagation()">
+            VER PROYECTO
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="card-decoration"></div>
+      </div>
+    </div>
+    
+  </div>
+</section>

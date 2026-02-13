@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="bracket">&lt;</span>
+          <span class="logo-text">ANDY.DEV</span>
+          <span class="bracket">/&gt;</span>
+        </div>
+        <p class="brand-tagline">
+          Construyendo el futuro digital, un deploy a la vez.
+        </p>
+        <!-- <div class="brand-decoration"></div> -->
+      </div>
+      
+      <div class="footer-links">
+        <h4 class="links-title">NAVEGACIÓN</h4>
+        <nav class="links-nav">
+          <button 
+            *ngFor="let link of quickLinks"
+            class="footer-link"
+            (click)="scrollToSection(link.id)">
+            {{ link.label }}
+          </button>
+        </nav>
+      </div>
+      
+      <div class="footer-legal">
+        <div class="legal-text">
+          &copy; {{ currentYear }} Full-Stack & Cloud Engineer
+        </div>
+        <!-- <div class="legal-text">
+          Diseñado y desarrollado con <span class="heart">▮</span> y café
+        </div> -->
+      </div>
+      
+    </div>
+    
+    <!-- <div class="footer-bottom">
+      <div class="bottom-line"></div>
+      <div class="bottom-text">
+        <span class="code-symbol">//</span> END OF TRANSMISSION
+      </div>
+    </div> -->
+    
+  </div>
+</footer>

@@ -1,0 +1,219 @@
+// Neo-Brutalist Tech Portfolio - Global Styles
+// Estética: Brutalismo digital + elementos futuristas
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  // Paleta Futurista: Colores profundos con acentos neon controlados
+  --color-bg: #0a0e27;           // Azul profundo oscuro
+  --color-surface: #0f1535;      // Azul aún más profundo
+  --color-primary: #00d9ff;      // Cyan brillante futurista
+  --color-secondary: #b026ff;    // Púrpura neón futurista
+  --color-accent: #00ff88;       // Verde mint neón
+  --color-white: #e0e6ff;        // Blanco azulado
+  --color-text: #c5d3ff;         // Texto con tiente azul
+  --color-text-dim: #6b7299;
+
+  // Tipografía
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Montserrat', sans-serif;
+  
+  // Sombras futuristas con glow
+  --shadow-brutal: 0 0 20px var(--color-primary), 8px 8px 0px rgba(0, 217, 255, 0.2);
+  --shadow-brutal-hover: 0 0 30px var(--color-primary), 12px 12px 0px rgba(0, 217, 255, 0.3);
+  --shadow-glitch: 0 0 15px var(--color-secondary), 4px 4px 0px rgba(176, 38, 255, 0.2);
+  
+  // Bordes gruesos
+  --border-thick: 3px solid var(--color-primary);
+  --border-thin: 2px solid var(--color-white);
+  
+  // Glow effects
+  --glow-primary: 0 0 10px var(--color-primary), 0 0 20px rgba(0, 217, 255, 0.5);
+  --glow-secondary: 0 0 10px var(--color-secondary), 0 0 20px rgba(176, 38, 255, 0.5);
+  --glow-accent: 0 0 10px var(--color-accent), 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// Cursor personalizado
+// body {
+//   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="8" fill="%2300d9ff" stroke="%230a0e27" stroke-width="2"/></svg>') 12 12, auto;
+// }
+
+// a, button {
+//   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><rect x="4" y="4" width="16" height="16" fill="%23b026ff" stroke="%230a0e27" stroke-width="2"/></svg>') 12 12, pointer;
+// }
+
+// Scrollbar personalizada
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-primary);
+  box-shadow: inset 0 0 10px rgba(0, 217, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  
+  &:hover {
+    background: linear-gradient(180deg, var(--color-secondary), var(--color-accent));
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.7);
+  }
+}
+
+// Selección de texto
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+// Animaciones globales futuristas
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: 
+      4px 4px 0 var(--color-secondary),
+      -2px -2px 0 var(--color-accent);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+    text-shadow: 
+      -4px 4px 0 var(--color-secondary),
+      2px -2px 0 var(--color-accent);
+  }
+  40% {
+    transform: translate(1px, -1px);
+    text-shadow: 
+      4px -4px 0 var(--color-secondary),
+      -2px 2px 0 var(--color-accent);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+    text-shadow: 
+      -4px -4px 0 var(--color-secondary),
+      2px 2px 0 var(--color-accent);
+  }
+  80% {
+    transform: translate(1px, 1px);
+    text-shadow: 
+      4px 4px 0 var(--color-secondary),
+      -2px -2px 0 var(--color-accent);
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: 
+      4px 4px 0 var(--color-secondary),
+      -2px -2px 0 var(--color-accent);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px var(--color-primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--color-primary)) drop-shadow(0 0 30px rgba(0, 217, 255, 0.6));
+  }
+}
+
+@keyframes hologram {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--color-primary);
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-secondary);
+  }
+}
+
+@keyframes slide-in-diagonal {
+  from {
+    opacity: 0;
+    transform: translate(-50px, -50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float-brutal {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes text-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes border-pulse {
+  0%, 100% {
+    border-color: var(--color-primary);
+  }
+  50% {
+    border-color: var(--color-secondary);
+  }
+}
+
+// Utilidades
+.text-glitch {
+  animation: glitch 0.3s infinite;
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+// Grid de fondo
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 217, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
